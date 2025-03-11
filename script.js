@@ -1,7 +1,7 @@
  const quoteContainer = document.getElementById('quote-container');
  const quoteText = document.getElementById('quote');
  const authorText = document.getElementById('author');
- const twitterBtn = document.getElementById('twitter-button');
+ const facebookBtn = document.getElementById('facebook-button');
  const newQuoteBtn = document.getElementById('new-quote');
 
  let apiQuotes =  [];
@@ -43,15 +43,15 @@ function newQuote() {
 
 
  //Tweet Quote
- function tweetQuote() {
-    const twitterUrl = 'https://x.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}';
-    window.open(twitterUrl, '_blank');
+ function shareQuote() {
+    const facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(quoteText)}';
+    window.open(facebookUrl, '_blank');
  }
 
  //Event Listener
 
  newQuoteBtn.addEventListener('click', newQuote);
- twitterBtn.addEventListener('click', tweetQuote);
+ facebookBtn.addEventListener('click', shareQuote);
 
  //on Load
  getQuotes();
