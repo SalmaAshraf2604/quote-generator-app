@@ -3,6 +3,7 @@
  const authorText = document.getElementById('author');
  const facebookBtn = document.getElementById('facebook-button');
  const newQuoteBtn = document.getElementById('new-quote');
+ var loadingScreen = document.querySelector(".loader");
 
  let apiQuotes =  [];
  
@@ -42,7 +43,7 @@ function newQuote() {
  }
 
 
- //Tweet Quote
+ //Share Quote
  function shareQuote() {
     const facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(quoteText)}';
     window.open(facebookUrl, '_blank');
@@ -52,6 +53,11 @@ function newQuote() {
 
  newQuoteBtn.addEventListener('click', newQuote);
  facebookBtn.addEventListener('click', shareQuote);
+
+
+ window.addEventListener('load', function() {
+    loadingScreen.style.display = 'none';
+  })
 
  //on Load
  getQuotes();
