@@ -54,7 +54,7 @@ function newQuote() {
  newQuoteBtn.addEventListener('click', newQuote);
  facebookBtn.addEventListener('click', shareQuote);
 
-
+ //Loader Event Listener
  window.addEventListener('load', function() {
     loadingScreen.style.display = 'none';
   })
